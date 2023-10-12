@@ -1,0 +1,176 @@
+﻿@using LoginFormInMvc.Models
+@model StudentProfile
+
+
+@{
+    ViewBag.Title = "showprofile";
+}
+
+<h2>showprofile</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body>
+
+    <div class="container">
+        <div class="column-gap-2">
+
+            <div class="align-content-lg-center">
+            <div class="column-gap-1">
+
+                <div class="col-md-4" id="card1">
+                    <div class="card">
+                        <div class="card-header">
+                            Student Profile
+                        </div>
+                        <div class="card-body">
+
+                            <h5 class="card-title">Student Information</h5>
+                            <ul>
+                                @foreach (var student in Model.StudentInfo)
+                                {
+                                <li>
+                                    <strong>Name:</strong> @student.FirstName
+                                    <br />
+                                    <strong>Lastname:</strong> @student.LastName
+                                    <br />
+                                    <strong>Gender:</strong> @student.Gender
+                                </li>
+                                }
+                            </ul>
+
+                            <h5 class="card-title">Marks Information</h5>
+                            <ul>
+                                @foreach (var marks in Model.StudentMark)
+                                {
+                                <li>
+                                    <strong>SSC:</strong> @marks.SSCPercentage
+                                    <br />
+                                    <strong>HSC:</strong> @marks.HSCPercentage
+                                </li>
+                                }
+                            </ul>
+
+                            <h5 class="card-title">Exp Information</h5>
+                            <ul>
+                                @foreach (var exp in Model.StudnetExp)
+                                {
+                                <li>
+                                    <strong>EXP:</strong> @exp.HasWorkExperience
+                                    <br />
+                                    <strong>COMPANY NAME:</strong> @exp.CompanyName
+                                </li>
+                                }
+                            </ul>
+                            <a href="@Url.Action("DownloadCard", "Login", new { cardId = "card1" })" class="btn btn-primary">Download Card 1</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <hr />
+
+            <div class="col-md-4">
+                <div class="card bg-primary text-white">
+                    <div class="card-header" id="card2">
+                        Student Profile
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Student Information</h5>
+                        <ul>
+                            @foreach (var student in Model.StudentInfo)
+                            {
+                            <li>
+                                <strong>Name:</strong> @student.FirstName
+                                <br />
+                                <strong>Lastname:</strong> @student.LastName
+                                <br />
+                                <strong>Gender:</strong> @student.Gender
+                            </li>
+                            }
+                        </ul>
+                        <h5 class="card-title">Marks Information</h5>
+                        <ul>
+                            @foreach (var marks in Model.StudentMark)
+                            {
+                            <li>
+                                <strong>SSC:</strong> @marks.SSCPercentage
+                                <br />
+                                <strong>HSC:</strong> @marks.HSCPercentage
+                            </li>
+                            }
+                        </ul>
+                        <h5 class="card-title">Exp Information</h5>
+                        <ul>
+                            @foreach (var exp in Model.StudnetExp)
+                            {
+                            <li>
+                                <strong>EXP:</strong> @exp.HasWorkExperience
+                                <br />
+                                <strong>COMPANY NAME:</strong> @exp.CompanyName
+                            </li>
+                            }
+                        </ul>
+                        <a href="@Url.Action("DownloadCard", "Login", new { cardId = "card2" })" class="btn btn-primary">Download Card 2</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+    <div class="col-md-4">
+        <div class="card bg-success text-white">
+            <div class="card-header" id="card3">
+                Student Profile
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Student Information</h5>
+                <ul>
+                    @foreach (var student in Model.StudentInfo)
+                    {
+                        <li>
+                            <strong>Name:</strong> @student.FirstName
+                            <br />
+                            <strong>Lastname:</strong> @student.LastName
+                            <br />
+                            <strong>Gender:</strong> @student.Gender
+                        </li>
+                    }
+                </ul>
+                <h5 class="card-title">Marks Information</h5>
+                <ul>
+                    @foreach (var marks in Model.StudentMark)
+                    {
+                        <li>
+                            <strong>SSC:</strong> @marks.SSCPercentage
+                            <br />
+                            <strong>HSC:</strong> @marks.HSCPercentage
+                        </li>
+                    }
+                </ul>
+                <h5 class="card-title">Exp Information</h5>
+                <ul>
+                    @foreach (var exp in Model.StudnetExp)
+                    {
+                        <li>
+                            <strong>EXP:</strong> @exp.HasWorkExperience
+                            <br />
+                            <strong>COMPANY NAME:</strong> @exp.CompanyName
+                        </li>
+                    }
+                </ul>
+                <a href="@Url.Action("DownloadCard", "Login", new { cardId = "card3" })" class="btn btn-primary">Download Card 3</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
